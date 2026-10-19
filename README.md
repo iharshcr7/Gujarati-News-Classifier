@@ -139,6 +139,9 @@ data/processed/      Generated data (not tracked)
 models/              Trained model artifacts (not tracked)
 reports/             Evaluation and experiment reports
 ```
+<img width="1578" height="877" alt="image" src="https://github.com/user-attachments/assets/43381c10-3ff2-4abe-b9e7-c5ea0baf9670" />
+
+<img width="581" height="427" alt="image" src="https://github.com/user-attachments/assets/101608f9-761a-4f9b-bf81-736dc8304b5a" />
 
 For a detailed architecture, dataset description, methodology, and glossary,
 start with the
