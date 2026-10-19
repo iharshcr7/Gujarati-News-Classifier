@@ -1,0 +1,22 @@
+%% Diagram F - Classification experiments and evaluation
+flowchart TD
+    TRAIN["Cleaned train split<br/>78,806 headlines"] --> A["Config A:<br/>Skip-gram docvecs (100-d dense)"]
+    TRAIN --> B["Config B:<br/>CBOW docvecs (100-d dense)"]
+    TRAIN --> C["Config C:<br/>TF-IDF (fitted on train only)"]
+
+    A --> E1["4 estimators"]
+    B --> E1
+    C --> E2["Sparse estimators:<br/>LogReg, LinearSVC"]
+    C --> E3["SVD-reduced dense view:<br/>RandomForest, HistGB"]
+
+    E1 --> GRID["12 experiments total"]
+    E2 --> GRID
+    E3 --> GRID
+
+    GRID --> VALM["Validation macro-F1<br/>(only selection metric)"]
+    VALM --> RANK["Rank all experiments"]
+    RANK --> BEST["Best = exp008<br/>skipgram docvecs + HistGradientBoosting"]
+    BEST --> FREEZE["Freeze configuration"]
+    FREEZE --> TESTONCE["Evaluate exactly once on test split<br/>macro-F1 0.8910 / accuracy 0.8953"]
+    TESTONCE --> ART["Save models/classifiers/selected_model.joblib"]
+    TESTONCE --> REP["reports/classification_test_report.txt<br/>confusion matrix + plots"]

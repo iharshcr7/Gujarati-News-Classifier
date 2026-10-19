@@ -1,0 +1,28 @@
+{
+  "available": true,
+  "model_name": "skipgram",
+  "score_source": "predict_proba",
+  "uncalibrated": {
+    "available": true,
+    "n_samples": 10175,
+    "n_bins": 10,
+    "accuracy": 0.8947420147420148,
+    "mean_confidence": 0.9300559702308179,
+    "log_loss": 0.36443495927635206,
+    "brier": 0.15997621281599098,
+    "ece": 0.03531395548880299
+  },
+  "calibrated_sigmoid_cv3": {
+    "available": true,
+    "n_samples": 10175,
+    "n_bins": 10,
+    "accuracy": 0.891007371007371,
+    "mean_confidence": 0.8500982171888108,
+    "log_loss": 0.3588573600573617,
+    "brier": 0.1653056272208551,
+    "ece": 0.046450349789719236,
+    "method": "sigmoid",
+    "cv": 3,
+    "fit_seconds": 204.74619809999967
+  }
+}

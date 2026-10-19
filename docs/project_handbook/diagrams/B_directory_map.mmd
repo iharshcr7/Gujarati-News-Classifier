@@ -1,0 +1,51 @@
+%% Diagram B - Repository directory map
+flowchart LR
+    ROOT["Gujarati News Article/"]
+
+    ROOT --> CFG["config.py"]
+    ROOT --> REQ["requirements.txt"]
+    ROOT --> GIT[".gitignore"]
+
+    ROOT --> SCRIPTS["Root entry-point scripts"]
+    SCRIPTS --> S1["inspect_dataset.py"]
+    SCRIPTS --> S2["preprocess_dataset.py"]
+    SCRIPTS --> S3["train_word2vec.py"]
+    SCRIPTS --> S4["generate_document_vectors.py"]
+    SCRIPTS --> S5["run_classification.py"]
+    SCRIPTS --> S6["run_error_analysis.py"]
+    SCRIPTS --> S7["run_model_improvement.py"]
+
+    ROOT --> SRC["src/ (library modules)"]
+    SRC --> M1["data_loader.py"]
+    SRC --> M2["dataset_inspection.py"]
+    SRC --> M3["preprocessing.py"]
+    SRC --> M4["word2vec_trainer.py"]
+    SRC --> M5["document_vectors.py"]
+    SRC --> M6["text_features.py"]
+    SRC --> M7["evaluation.py"]
+    SRC --> M8["classification.py"]
+    SRC --> M9["prediction.py"]
+    SRC --> M10["error_analysis.py"]
+    SRC --> M11["experiments.py"]
+
+    ROOT --> APP["app/ (GUI)"]
+    APP --> A1["streamlit_app.py"]
+    APP --> A2["content.py"]
+    APP --> A3["README.md"]
+
+    ROOT --> DATA["data/"]
+    DATA --> D1["raw/ - original CSVs"]
+    DATA --> D2["processed/ - docvecs + meta"]
+
+    ROOT --> MODELS["models/"]
+    MODELS --> MO1["word2vec_cbow.model"]
+    MODELS --> MO2["word2vec_skipgram.model"]
+    MODELS --> MO3["classifiers/"]
+    MODELS --> MO4["experiments/"]
+    MODELS --> MO5["backup/"]
+
+    ROOT --> REPORTS["reports/"]
+    ROOT --> TESTS["tests/"]
+    ROOT --> DOCS["docs/"]
+    DOCS --> DO1["superpowers/plans/"]
+    DOCS --> DO2["project_handbook/"]

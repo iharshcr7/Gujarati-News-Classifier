@@ -1,0 +1,1292 @@
+[
+  {
+    "index": 100,
+    "feature_type": "docvec:skipgram",
+    "feature_label": "Skip-gram doc vectors (100d)",
+    "classifier": "gradient_boosting",
+    "classifier_params": "l2_regularization=0.0, learning_rate=0.1, max_iter=200, max_leaf_nodes=31, seed=42",
+    "train_rows": 78806,
+    "val_rows": 10175,
+    "num_features": 100,
+    "is_sparse": false,
+    "train_seconds": 103.33443299999999,
+    "eval_seconds": 2.330134600000747,
+    "metrics": {
+      "accuracy": 0.8947420147420148,
+      "macro_precision": 0.8951534425880079,
+      "macro_recall": 0.8825859178544313,
+      "macro_f1": 0.8882740742840738,
+      "weighted_f1": 0.8942352601008966,
+      "per_class": {
+        "State": {
+          "precision": 0.9209580838323354,
+          "recall": 0.9470443349753694,
+          "f1": 0.9338190649666059,
+          "support": 1624
+        },
+        "International": {
+          "precision": 0.8645242596093258,
+          "recall": 0.9183400267737617,
+          "f1": 0.8906199285946121,
+          "support": 1494
+        },
+        "Entertainment": {
+          "precision": 0.9341749323715058,
+          "recall": 0.9135802469135802,
+          "f1": 0.9237628176549264,
+          "support": 1134
+        },
+        "Business": {
+          "precision": 0.8845166809238666,
+          "recall": 0.8770144189991518,
+          "f1": 0.8807495741056218,
+          "support": 1179
+        },
+        "Nation": {
+          "precision": 0.8003533568904594,
+          "recall": 0.7671464860287892,
+          "f1": 0.7833981841763943,
+          "support": 1181
+        },
+        "Technology": {
+          "precision": 0.8730853391684902,
+          "recall": 0.9130434782608695,
+          "f1": 0.8926174496644296,
+          "support": 874
+        },
+        "Sports": {
+          "precision": 0.9575699132111861,
+          "recall": 0.9511494252873564,
+          "f1": 0.9543488707352235,
+          "support": 1044
+        },
+        "Astro": {
+          "precision": 0.9600484261501211,
+          "recall": 0.9451728247914184,
+          "f1": 0.9525525525525526,
+          "support": 839
+        },
+        "Crime": {
+          "precision": 0.8202764976958525,
+          "recall": 0.7432150313152401,
+          "f1": 0.7798466593647316,
+          "support": 479
+        },
+        "Auto": {
+          "precision": 0.936026936026936,
+          "recall": 0.8501529051987767,
+          "f1": 0.8910256410256411,
+          "support": 327
+        }
+      },
+      "support": 10175
+    },
+    "reduced_dim": null,
+    "warnings": [],
+    "artifact_path": "C:\\Users\\harsh\\OneDrive\\Documents\\Desktop\\Gujarati News Article\\models\\experiments\\exp100_sg_histgb_control.joblib"
+  },
+  {
+    "index": 101,
+    "feature_type": "docvec:skipgram",
+    "feature_label": "Skip-gram doc vectors (100d)",
+    "classifier": "gradient_boosting",
+    "classifier_params": "l2_regularization=0.0, learning_rate=0.1, max_iter=100, max_leaf_nodes=31, seed=42",
+    "train_rows": 78806,
+    "val_rows": 10175,
+    "num_features": 100,
+    "is_sparse": false,
+    "train_seconds": 67.4807664,
+    "eval_seconds": 1.552084900000409,
+    "metrics": {
+      "accuracy": 0.8914987714987715,
+      "macro_precision": 0.8923067170422312,
+      "macro_recall": 0.8794859864143219,
+      "macro_f1": 0.8853034383932494,
+      "weighted_f1": 0.8909502092565619,
+      "per_class": {
+        "State": {
+          "precision": 0.9160214413341274,
+          "recall": 0.9470443349753694,
+          "f1": 0.9312745988495307,
+          "support": 1624
+        },
+        "International": {
+          "precision": 0.8632315521628499,
+          "recall": 0.9082998661311914,
+          "f1": 0.8851924331376386,
+          "support": 1494
+        },
+        "Entertainment": {
+          "precision": 0.933273219116321,
+          "recall": 0.9126984126984127,
+          "f1": 0.9228711547035221,
+          "support": 1134
+        },
+        "Business": {
+          "precision": 0.8765849535080305,
+          "recall": 0.8795589482612384,
+          "f1": 0.8780694326841659,
+          "support": 1179
+        },
+        "Nation": {
+          "precision": 0.7887323943661971,
+          "recall": 0.7586790855207451,
+          "f1": 0.7734138972809668,
+          "support": 1181
+        },
+        "Technology": {
+          "precision": 0.8774834437086093,
+          "recall": 0.9096109839816934,
+          "f1": 0.8932584269662921,
+          "support": 874
+        },
+        "Sports": {
+          "precision": 0.9584541062801932,
+          "recall": 0.9501915708812261,
+          "f1": 0.9543049543049543,
+          "support": 1044
+        },
+        "Astro": {
+          "precision": 0.9541616405307599,
+          "recall": 0.9427890345649583,
+          "f1": 0.9484412470023981,
+          "support": 839
+        },
+        "Crime": {
+          "precision": 0.8220140515222483,
+          "recall": 0.732776617954071,
+          "f1": 0.7748344370860927,
+          "support": 479
+        },
+        "Auto": {
+          "precision": 0.9331103678929766,
+          "recall": 0.8532110091743119,
+          "f1": 0.8913738019169329,
+          "support": 327
+        }
+      },
+      "support": 10175
+    },
+    "reduced_dim": null,
+    "warnings": [],
+    "artifact_path": "C:\\Users\\harsh\\OneDrive\\Documents\\Desktop\\Gujarati News Article\\models\\experiments\\exp101_sg_histgb_iter100.joblib"
+  },
+  {
+    "index": 102,
+    "feature_type": "docvec:skipgram",
+    "feature_label": "Skip-gram doc vectors (100d)",
+    "classifier": "gradient_boosting",
+    "classifier_params": "l2_regularization=0.0, learning_rate=0.1, max_iter=300, max_leaf_nodes=31, seed=42",
+    "train_rows": 78806,
+    "val_rows": 10175,
+    "num_features": 100,
+    "is_sparse": false,
+    "train_seconds": 102.88890530000026,
+    "eval_seconds": 2.3580481999997573,
+    "metrics": {
+      "accuracy": 0.8947420147420148,
+      "macro_precision": 0.8951534425880079,
+      "macro_recall": 0.8825859178544313,
+      "macro_f1": 0.8882740742840738,
+      "weighted_f1": 0.8942352601008966,
+      "per_class": {
+        "State": {
+          "precision": 0.9209580838323354,
+          "recall": 0.9470443349753694,
+          "f1": 0.9338190649666059,
+          "support": 1624
+        },
+        "International": {
+          "precision": 0.8645242596093258,
+          "recall": 0.9183400267737617,
+          "f1": 0.8906199285946121,
+          "support": 1494
+        },
+        "Entertainment": {
+          "precision": 0.9341749323715058,
+          "recall": 0.9135802469135802,
+          "f1": 0.9237628176549264,
+          "support": 1134
+        },
+        "Business": {
+          "precision": 0.8845166809238666,
+          "recall": 0.8770144189991518,
+          "f1": 0.8807495741056218,
+          "support": 1179
+        },
+        "Nation": {
+          "precision": 0.8003533568904594,
+          "recall": 0.7671464860287892,
+          "f1": 0.7833981841763943,
+          "support": 1181
+        },
+        "Technology": {
+          "precision": 0.8730853391684902,
+          "recall": 0.9130434782608695,
+          "f1": 0.8926174496644296,
+          "support": 874
+        },
+        "Sports": {
+          "precision": 0.9575699132111861,
+          "recall": 0.9511494252873564,
+          "f1": 0.9543488707352235,
+          "support": 1044
+        },
+        "Astro": {
+          "precision": 0.9600484261501211,
+          "recall": 0.9451728247914184,
+          "f1": 0.9525525525525526,
+          "support": 839
+        },
+        "Crime": {
+          "precision": 0.8202764976958525,
+          "recall": 0.7432150313152401,
+          "f1": 0.7798466593647316,
+          "support": 479
+        },
+        "Auto": {
+          "precision": 0.936026936026936,
+          "recall": 0.8501529051987767,
+          "f1": 0.8910256410256411,
+          "support": 327
+        }
+      },
+      "support": 10175
+    },
+    "reduced_dim": null,
+    "warnings": [],
+    "artifact_path": "C:\\Users\\harsh\\OneDrive\\Documents\\Desktop\\Gujarati News Article\\models\\experiments\\exp102_sg_histgb_iter300.joblib"
+  },
+  {
+    "index": 103,
+    "feature_type": "docvec:skipgram",
+    "feature_label": "Skip-gram doc vectors (100d)",
+    "classifier": "gradient_boosting",
+    "classifier_params": "l2_regularization=0.0, learning_rate=0.05, max_iter=200, max_leaf_nodes=31, seed=42",
+    "train_rows": 78806,
+    "val_rows": 10175,
+    "num_features": 100,
+    "is_sparse": false,
+    "train_seconds": 134.18623109999862,
+    "eval_seconds": 3.185444100001405,
+    "metrics": {
+      "accuracy": 0.8919901719901719,
+      "macro_precision": 0.8924810631618779,
+      "macro_recall": 0.8783010547427832,
+      "macro_f1": 0.8846084360158935,
+      "weighted_f1": 0.8914192503684181,
+      "per_class": {
+        "State": {
+          "precision": 0.9229379891631547,
+          "recall": 0.9439655172413793,
+          "f1": 0.9333333333333333,
+          "support": 1624
+        },
+        "International": {
+          "precision": 0.8666666666666667,
+          "recall": 0.9136546184738956,
+          "f1": 0.8895405669599218,
+          "support": 1494
+        },
+        "Entertainment": {
+          "precision": 0.933273219116321,
+          "recall": 0.9126984126984127,
+          "f1": 0.9228711547035221,
+          "support": 1134
+        },
+        "Business": {
+          "precision": 0.8723761544920235,
+          "recall": 0.8812553011026294,
+          "f1": 0.8767932489451477,
+          "support": 1179
+        },
+        "Nation": {
+          "precision": 0.7854640980735552,
+          "recall": 0.7595258255715496,
+          "f1": 0.7722772277227723,
+          "support": 1181
+        },
+        "Technology": {
+          "precision": 0.8673913043478261,
+          "recall": 0.9130434782608695,
+          "f1": 0.8896321070234113,
+          "support": 874
+        },
+        "Sports": {
+          "precision": 0.965082444228904,
+          "recall": 0.9530651340996169,
+          "f1": 0.9590361445783132,
+          "support": 1044
+        },
+        "Astro": {
+          "precision": 0.9544364508393285,
+          "recall": 0.9487485101311085,
+          "f1": 0.9515839808726838,
+          "support": 839
+        },
+        "Crime": {
+          "precision": 0.8186157517899761,
+          "recall": 0.7160751565762005,
+          "f1": 0.7639198218262806,
+          "support": 479
+        },
+        "Auto": {
+          "precision": 0.9385665529010239,
+          "recall": 0.8409785932721713,
+          "f1": 0.8870967741935484,
+          "support": 327
+        }
+      },
+      "support": 10175
+    },
+    "reduced_dim": null,
+    "warnings": [],
+    "artifact_path": "C:\\Users\\harsh\\OneDrive\\Documents\\Desktop\\Gujarati News Article\\models\\experiments\\exp103_sg_histgb_lr005.joblib"
+  },
+  {
+    "index": 104,
+    "feature_type": "docvec:skipgram",
+    "feature_label": "Skip-gram doc vectors (100d)",
+    "classifier": "gradient_boosting",
+    "classifier_params": "l2_regularization=0.0, learning_rate=0.1, max_iter=200, max_leaf_nodes=15, seed=42",
+    "train_rows": 78806,
+    "val_rows": 10175,
+    "num_features": 100,
+    "is_sparse": false,
+    "train_seconds": 39.81826320000073,
+    "eval_seconds": 1.3304471999999805,
+    "metrics": {
+      "accuracy": 0.8770515970515971,
+      "macro_precision": 0.8755745545900299,
+      "macro_recall": 0.8673570786148945,
+      "macro_f1": 0.8710188538669451,
+      "weighted_f1": 0.8763358027568466,
+      "per_class": {
+        "State": {
+          "precision": 0.9043062200956937,
+          "recall": 0.9310344827586207,
+          "f1": 0.9174757281553398,
+          "support": 1624
+        },
+        "International": {
+          "precision": 0.8443188951663528,
+          "recall": 0.9002677376171352,
+          "f1": 0.8713961775186265,
+          "support": 1494
+        },
+        "Entertainment": {
+          "precision": 0.9160714285714285,
+          "recall": 0.9047619047619048,
+          "f1": 0.9103815439219166,
+          "support": 1134
+        },
+        "Business": {
+          "precision": 0.8528428093645485,
+          "recall": 0.8651399491094147,
+          "f1": 0.8589473684210527,
+          "support": 1179
+        },
+        "Nation": {
+          "precision": 0.788159111933395,
+          "recall": 0.7214225232853514,
+          "f1": 0.753315649867374,
+          "support": 1181
+        },
+        "Technology": {
+          "precision": 0.8718232044198895,
+          "recall": 0.902745995423341,
+          "f1": 0.8870151770657673,
+          "support": 874
+        },
+        "Sports": {
+          "precision": 0.9510763209393346,
+          "recall": 0.9310344827586207,
+          "f1": 0.9409486931268151,
+          "support": 1044
+        },
+        "Astro": {
+          "precision": 0.9418886198547215,
+          "recall": 0.9272943980929678,
+          "f1": 0.9345345345345345,
+          "support": 839
+        },
+        "Crime": {
+          "precision": 0.7694013303769401,
+          "recall": 0.7244258872651357,
+          "f1": 0.7462365591397849,
+          "support": 479
+        },
+        "Auto": {
+          "precision": 0.9158576051779935,
+          "recall": 0.8654434250764526,
+          "f1": 0.889937106918239,
+          "support": 327
+        }
+      },
+      "support": 10175
+    },
+    "reduced_dim": null,
+    "warnings": [],
+    "artifact_path": "C:\\Users\\harsh\\OneDrive\\Documents\\Desktop\\Gujarati News Article\\models\\experiments\\exp104_sg_histgb_leaves15.joblib"
+  },
+  {
+    "index": 105,
+    "feature_type": "docvec:skipgram",
+    "feature_label": "Skip-gram doc vectors (100d)",
+    "classifier": "gradient_boosting",
+    "classifier_params": "l2_regularization=0.0, learning_rate=0.1, max_iter=200, max_leaf_nodes=63, seed=42",
+    "train_rows": 78806,
+    "val_rows": 10175,
+    "num_features": 100,
+    "is_sparse": false,
+    "train_seconds": 117.09749060000104,
+    "eval_seconds": 1.779400400000668,
+    "metrics": {
+      "accuracy": 0.8934643734643735,
+      "macro_precision": 0.894853590439707,
+      "macro_recall": 0.879126956770004,
+      "macro_f1": 0.8861666146319784,
+      "weighted_f1": 0.8929528586586744,
+      "per_class": {
+        "State": {
+          "precision": 0.9226118500604595,
+          "recall": 0.9396551724137931,
+          "f1": 0.9310555216595485,
+          "support": 1624
+        },
+        "International": {
+          "precision": 0.8639798488664987,
+          "recall": 0.9183400267737617,
+          "f1": 0.890330953926022,
+          "support": 1494
+        },
+        "Entertainment": {
+          "precision": 0.928635147190009,
+          "recall": 0.917989417989418,
+          "f1": 0.9232815964523282,
+          "support": 1134
+        },
+        "Business": {
+          "precision": 0.8787878787878788,
+          "recall": 0.8854961832061069,
+          "f1": 0.8821292775665399,
+          "support": 1179
+        },
+        "Nation": {
+          "precision": 0.788879235447437,
+          "recall": 0.768839966130398,
+          "f1": 0.7787307032590052,
+          "support": 1181
+        },
+        "Technology": {
+          "precision": 0.8784530386740331,
+          "recall": 0.9096109839816934,
+          "f1": 0.893760539629005,
+          "support": 874
+        },
+        "Sports": {
+          "precision": 0.965082444228904,
+          "recall": 0.9530651340996169,
+          "f1": 0.9590361445783132,
+          "support": 1044
+        },
+        "Astro": {
+          "precision": 0.9577804583835947,
+          "recall": 0.9463647199046484,
+          "f1": 0.9520383693045563,
+          "support": 839
+        },
+        "Crime": {
+          "precision": 0.8162291169451074,
+          "recall": 0.7139874739039666,
+          "f1": 0.7616926503340757,
+          "support": 479
+        },
+        "Auto": {
+          "precision": 0.9480968858131488,
+          "recall": 0.8379204892966361,
+          "f1": 0.8896103896103896,
+          "support": 327
+        }
+      },
+      "support": 10175
+    },
+    "reduced_dim": null,
+    "warnings": [],
+    "artifact_path": "C:\\Users\\harsh\\OneDrive\\Documents\\Desktop\\Gujarati News Article\\models\\experiments\\exp105_sg_histgb_leaves63.joblib"
+  },
+  {
+    "index": 106,
+    "feature_type": "docvec:skipgram",
+    "feature_label": "Skip-gram doc vectors (100d)",
+    "classifier": "gradient_boosting",
+    "classifier_params": "l2_regularization=1.0, learning_rate=0.1, max_iter=200, max_leaf_nodes=31, seed=42",
+    "train_rows": 78806,
+    "val_rows": 10175,
+    "num_features": 100,
+    "is_sparse": false,
+    "train_seconds": 142.19982320000054,
+    "eval_seconds": 3.163630799999737,
+    "metrics": {
+      "accuracy": 0.8944471744471745,
+      "macro_precision": 0.8948783242770915,
+      "macro_recall": 0.8833571043181797,
+      "macro_f1": 0.8886352953023964,
+      "weighted_f1": 0.8940640463609884,
+      "per_class": {
+        "State": {
+          "precision": 0.9245169082125604,
+          "recall": 0.9427339901477833,
+          "f1": 0.9335365853658537,
+          "support": 1624
+        },
+        "International": {
+          "precision": 0.86481364497789,
+          "recall": 0.9163319946452476,
+          "f1": 0.8898277543061424,
+          "support": 1494
+        },
+        "Entertainment": {
+          "precision": 0.9317160826594789,
+          "recall": 0.9144620811287478,
+          "f1": 0.9230084557187361,
+          "support": 1134
+        },
+        "Business": {
+          "precision": 0.8808510638297873,
+          "recall": 0.8778625954198473,
+          "f1": 0.8793542905692439,
+          "support": 1179
+        },
+        "Nation": {
+          "precision": 0.7916666666666666,
+          "recall": 0.7722269263336156,
+          "f1": 0.7818259751393056,
+          "support": 1181
+        },
+        "Technology": {
+          "precision": 0.8815060908084164,
+          "recall": 0.9107551487414187,
+          "f1": 0.8958919527293191,
+          "support": 874
+        },
+        "Sports": {
+          "precision": 0.9630350194552529,
+          "recall": 0.9482758620689655,
+          "f1": 0.9555984555984556,
+          "support": 1044
+        },
+        "Astro": {
+          "precision": 0.9566787003610109,
+          "recall": 0.9475566150178785,
+          "f1": 0.9520958083832335,
+          "support": 839
+        },
+        "Crime": {
+          "precision": 0.8167053364269141,
+          "recall": 0.7348643006263048,
+          "f1": 0.7736263736263737,
+          "support": 479
+        },
+        "Auto": {
+          "precision": 0.9372937293729373,
+          "recall": 0.8685015290519877,
+          "f1": 0.9015873015873016,
+          "support": 327
+        }
+      },
+      "support": 10175
+    },
+    "reduced_dim": null,
+    "warnings": [],
+    "artifact_path": "C:\\Users\\harsh\\OneDrive\\Documents\\Desktop\\Gujarati News Article\\models\\experiments\\exp106_sg_histgb_l2_1.joblib"
+  },
+  {
+    "index": 107,
+    "feature_type": "docvec:skipgram",
+    "feature_label": "Skip-gram doc vectors (100d)",
+    "classifier": "gradient_boosting",
+    "classifier_params": "l2_regularization=0.0, learning_rate=0.05, max_iter=200, max_leaf_nodes=63, seed=42",
+    "train_rows": 78806,
+    "val_rows": 10175,
+    "num_features": 100,
+    "is_sparse": false,
+    "train_seconds": 222.00182630000018,
+    "eval_seconds": 3.440784700000222,
+    "metrics": {
+      "accuracy": 0.8958230958230958,
+      "macro_precision": 0.8965765625796929,
+      "macro_recall": 0.882681457086816,
+      "macro_f1": 0.8889087756457522,
+      "weighted_f1": 0.8951042437659488,
+      "per_class": {
+        "State": {
+          "precision": 0.92,
+          "recall": 0.9488916256157636,
+          "f1": 0.9342224916641406,
+          "support": 1624
+        },
+        "International": {
+          "precision": 0.8697027197975965,
+          "recall": 0.9203480589022758,
+          "f1": 0.8943089430894309,
+          "support": 1494
+        },
+        "Entertainment": {
+          "precision": 0.9229406554472985,
+          "recall": 0.9188712522045855,
+          "f1": 0.9209014582412727,
+          "support": 1134
+        },
+        "Business": {
+          "precision": 0.8782535684298909,
+          "recall": 0.8871925360474979,
+          "f1": 0.8827004219409282,
+          "support": 1179
+        },
+        "Nation": {
+          "precision": 0.802491103202847,
+          "recall": 0.7637595258255715,
+          "f1": 0.782646420824295,
+          "support": 1181
+        },
+        "Technology": {
+          "precision": 0.8876529477196885,
+          "recall": 0.9130434782608695,
+          "f1": 0.9001692047377327,
+          "support": 874
+        },
+        "Sports": {
+          "precision": 0.9622093023255814,
+          "recall": 0.9511494252873564,
+          "f1": 0.9566473988439307,
+          "support": 1044
+        },
+        "Astro": {
+          "precision": 0.9565217391304348,
+          "recall": 0.9439809296781884,
+          "f1": 0.9502099580083984,
+          "support": 839
+        },
+        "Crime": {
+          "precision": 0.8293269230769231,
+          "recall": 0.7202505219206681,
+          "f1": 0.770949720670391,
+          "support": 479
+        },
+        "Auto": {
+          "precision": 0.9366666666666666,
+          "recall": 0.8593272171253823,
+          "f1": 0.8963317384370016,
+          "support": 327
+        }
+      },
+      "support": 10175
+    },
+    "reduced_dim": null,
+    "warnings": [],
+    "artifact_path": "C:\\Users\\harsh\\OneDrive\\Documents\\Desktop\\Gujarati News Article\\models\\experiments\\exp107_sg_histgb_lr005_leaves63.joblib"
+  },
+  {
+    "index": 108,
+    "feature_type": "docvec:cbow",
+    "feature_label": "CBOW doc vectors (100d)",
+    "classifier": "gradient_boosting",
+    "classifier_params": "l2_regularization=0.0, learning_rate=0.1, max_iter=200, max_leaf_nodes=31, seed=42",
+    "train_rows": 78806,
+    "val_rows": 10175,
+    "num_features": 100,
+    "is_sparse": false,
+    "train_seconds": 123.17359539999961,
+    "eval_seconds": 2.951120699999592,
+    "metrics": {
+      "accuracy": 0.8686977886977887,
+      "macro_precision": 0.8746249342715636,
+      "macro_recall": 0.8536438050557958,
+      "macro_f1": 0.8628119980577196,
+      "weighted_f1": 0.8680352891106631,
+      "per_class": {
+        "State": {
+          "precision": 0.8842538190364277,
+          "recall": 0.9267241379310345,
+          "f1": 0.9049909801563439,
+          "support": 1624
+        },
+        "International": {
+          "precision": 0.803862401931201,
+          "recall": 0.891566265060241,
+          "f1": 0.8454458901935893,
+          "support": 1494
+        },
+        "Entertainment": {
+          "precision": 0.9087656529516994,
+          "recall": 0.8959435626102292,
+          "f1": 0.9023090586145648,
+          "support": 1134
+        },
+        "Business": {
+          "precision": 0.8687127024722933,
+          "recall": 0.8642917726887193,
+          "f1": 0.8664965986394558,
+          "support": 1179
+        },
+        "Nation": {
+          "precision": 0.7602862254025045,
+          "recall": 0.7197290431837426,
+          "f1": 0.7394519356241844,
+          "support": 1181
+        },
+        "Technology": {
+          "precision": 0.8666666666666667,
+          "recall": 0.8775743707093822,
+          "f1": 0.8720864127345083,
+          "support": 874
+        },
+        "Sports": {
+          "precision": 0.9646365422396856,
+          "recall": 0.9406130268199234,
+          "f1": 0.9524733268671193,
+          "support": 1044
+        },
+        "Astro": {
+          "precision": 0.9522058823529411,
+          "recall": 0.9261025029797377,
+          "f1": 0.9389728096676737,
+          "support": 839
+        },
+        "Crime": {
+          "precision": 0.8095238095238095,
+          "recall": 0.6743215031315241,
+          "f1": 0.7357630979498861,
+          "support": 479
+        },
+        "Auto": {
+          "precision": 0.9273356401384083,
+          "recall": 0.8195718654434251,
+          "f1": 0.8701298701298701,
+          "support": 327
+        }
+      },
+      "support": 10175
+    },
+    "reduced_dim": null,
+    "warnings": [],
+    "artifact_path": "C:\\Users\\harsh\\OneDrive\\Documents\\Desktop\\Gujarati News Article\\models\\experiments\\exp108_cbow_histgb_control.joblib"
+  },
+  {
+    "index": 109,
+    "feature_type": "docvec:cbow",
+    "feature_label": "CBOW doc vectors (100d)",
+    "classifier": "gradient_boosting",
+    "classifier_params": "l2_regularization=0.0, learning_rate=0.05, max_iter=200, max_leaf_nodes=31, seed=42",
+    "train_rows": 78806,
+    "val_rows": 10175,
+    "num_features": 100,
+    "is_sparse": false,
+    "train_seconds": 136.48057359999984,
+    "eval_seconds": 3.276568599998427,
+    "metrics": {
+      "accuracy": 0.8666339066339066,
+      "macro_precision": 0.8708895288077365,
+      "macro_recall": 0.8530640260617576,
+      "macro_f1": 0.8609791473673478,
+      "weighted_f1": 0.8660197911671487,
+      "per_class": {
+        "State": {
+          "precision": 0.8818713450292398,
+          "recall": 0.9285714285714286,
+          "f1": 0.904619076184763,
+          "support": 1624
+        },
+        "International": {
+          "precision": 0.8051313378130727,
+          "recall": 0.8821954484605087,
+          "f1": 0.841903545193229,
+          "support": 1494
+        },
+        "Entertainment": {
+          "precision": 0.9115523465703971,
+          "recall": 0.890652557319224,
+          "f1": 0.9009812667261374,
+          "support": 1134
+        },
+        "Business": {
+          "precision": 0.862910008410429,
+          "recall": 0.8702290076335878,
+          "f1": 0.8665540540540541,
+          "support": 1179
+        },
+        "Nation": {
+          "precision": 0.7553763440860215,
+          "recall": 0.7138018628281118,
+          "f1": 0.7340008707009142,
+          "support": 1181
+        },
+        "Technology": {
+          "precision": 0.8671963677639046,
+          "recall": 0.8741418764302059,
+          "f1": 0.8706552706552707,
+          "support": 874
+        },
+        "Sports": {
+          "precision": 0.9644268774703557,
+          "recall": 0.9348659003831418,
+          "f1": 0.9494163424124513,
+          "support": 1044
+        },
+        "Astro": {
+          "precision": 0.9521472392638037,
+          "recall": 0.9249106078665077,
+          "f1": 0.9383313180169287,
+          "support": 839
+        },
+        "Crime": {
+          "precision": 0.7921760391198044,
+          "recall": 0.6764091858037579,
+          "f1": 0.7297297297297297,
+          "support": 479
+        },
+        "Auto": {
+          "precision": 0.9161073825503355,
+          "recall": 0.8348623853211009,
+          "f1": 0.8736,
+          "support": 327
+        }
+      },
+      "support": 10175
+    },
+    "reduced_dim": null,
+    "warnings": [],
+    "artifact_path": "C:\\Users\\harsh\\OneDrive\\Documents\\Desktop\\Gujarati News Article\\models\\experiments\\exp109_cbow_histgb_lr005.joblib"
+  },
+  {
+    "index": 110,
+    "feature_type": "docvec:cbow",
+    "feature_label": "CBOW doc vectors (100d)",
+    "classifier": "gradient_boosting",
+    "classifier_params": "l2_regularization=1.0, learning_rate=0.1, max_iter=300, max_leaf_nodes=63, seed=42",
+    "train_rows": 78806,
+    "val_rows": 10175,
+    "num_features": 100,
+    "is_sparse": false,
+    "train_seconds": 135.81526289999965,
+    "eval_seconds": 2.0328417000000627,
+    "metrics": {
+      "accuracy": 0.8692874692874692,
+      "macro_precision": 0.874280883839108,
+      "macro_recall": 0.8535460716646661,
+      "macro_f1": 0.8625783612934098,
+      "weighted_f1": 0.8686054747796101,
+      "per_class": {
+        "State": {
+          "precision": 0.8896065766294774,
+          "recall": 0.9328817733990148,
+          "f1": 0.9107303877366997,
+          "support": 1624
+        },
+        "International": {
+          "precision": 0.8037326911499096,
+          "recall": 0.893574297188755,
+          "f1": 0.8462757527733756,
+          "support": 1494
+        },
+        "Entertainment": {
+          "precision": 0.9114724480578139,
+          "recall": 0.8897707231040565,
+          "f1": 0.9004908522980812,
+          "support": 1134
+        },
+        "Business": {
+          "precision": 0.8693424423569599,
+          "recall": 0.8634435962680237,
+          "f1": 0.8663829787234043,
+          "support": 1179
+        },
+        "Nation": {
+          "precision": 0.7611408199643493,
+          "recall": 0.7231160033869602,
+          "f1": 0.7416413373860182,
+          "support": 1181
+        },
+        "Technology": {
+          "precision": 0.8707865168539326,
+          "recall": 0.8867276887871853,
+          "f1": 0.8786848072562359,
+          "support": 874
+        },
+        "Sports": {
+          "precision": 0.9595660749506904,
+          "recall": 0.9319923371647509,
+          "f1": 0.9455782312925171,
+          "support": 1044
+        },
+        "Astro": {
+          "precision": 0.9499389499389499,
+          "recall": 0.9272943980929678,
+          "f1": 0.9384800965018094,
+          "support": 839
+        },
+        "Crime": {
+          "precision": 0.8065326633165829,
+          "recall": 0.6701461377870563,
+          "f1": 0.7320410490307868,
+          "support": 479
+        },
+        "Auto": {
+          "precision": 0.9206896551724137,
+          "recall": 0.8165137614678899,
+          "f1": 0.8654781199351702,
+          "support": 327
+        }
+      },
+      "support": 10175
+    },
+    "reduced_dim": null,
+    "warnings": [],
+    "artifact_path": "C:\\Users\\harsh\\OneDrive\\Documents\\Desktop\\Gujarati News Article\\models\\experiments\\exp110_cbow_histgb_iter300_leaves63_l2_1.joblib"
+  },
+  {
+    "index": 111,
+    "feature_type": "tfidf_word_uni",
+    "feature_label": "TF-IDF word unigram (1,1)",
+    "classifier": "logistic_regression",
+    "classifier_params": "max_iter=1000, seed=42, solver=lbfgs",
+    "train_rows": 78806,
+    "val_rows": 10175,
+    "num_features": 50000,
+    "is_sparse": true,
+    "train_seconds": 35.475973099999464,
+    "eval_seconds": 0.01401369999985036,
+    "metrics": {
+      "accuracy": 0.8566093366093366,
+      "macro_precision": 0.8725822592793715,
+      "macro_recall": 0.8470833072346069,
+      "macro_f1": 0.8580088382160656,
+      "weighted_f1": 0.856520727418001,
+      "per_class": {
+        "State": {
+          "precision": 0.8187919463087249,
+          "recall": 0.9014778325123153,
+          "f1": 0.8581477139507621,
+          "support": 1624
+        },
+        "International": {
+          "precision": 0.7802937576499388,
+          "recall": 0.8534136546184738,
+          "f1": 0.8152173913043478,
+          "support": 1494
+        },
+        "Entertainment": {
+          "precision": 0.8842756183745583,
+          "recall": 0.8827160493827161,
+          "f1": 0.883495145631068,
+          "support": 1134
+        },
+        "Business": {
+          "precision": 0.8778761061946903,
+          "recall": 0.8413910093299406,
+          "f1": 0.859246427024686,
+          "support": 1179
+        },
+        "Nation": {
+          "precision": 0.8138248847926267,
+          "recall": 0.7476714648602879,
+          "f1": 0.7793468667255075,
+          "support": 1181
+        },
+        "Technology": {
+          "precision": 0.8443960826985855,
+          "recall": 0.8878718535469108,
+          "f1": 0.8655883993307306,
+          "support": 874
+        },
+        "Sports": {
+          "precision": 0.9547738693467337,
+          "recall": 0.9099616858237548,
+          "f1": 0.9318293281020108,
+          "support": 1044
+        },
+        "Astro": {
+          "precision": 0.9421182266009852,
+          "recall": 0.9117997616209773,
+          "f1": 0.9267110841913991,
+          "support": 839
+        },
+        "Crime": {
+          "precision": 0.8589420654911839,
+          "recall": 0.7118997912317327,
+          "f1": 0.7785388127853882,
+          "support": 479
+        },
+        "Auto": {
+          "precision": 0.950530035335689,
+          "recall": 0.8226299694189603,
+          "f1": 0.8819672131147541,
+          "support": 327
+        }
+      },
+      "support": 10175
+    },
+    "reduced_dim": null,
+    "warnings": [],
+    "artifact_path": "C:\\Users\\harsh\\OneDrive\\Documents\\Desktop\\Gujarati News Article\\models\\experiments\\exp111_tfidf_uni_logreg.joblib"
+  },
+  {
+    "index": 112,
+    "feature_type": "tfidf_word_uni",
+    "feature_label": "TF-IDF word unigram (1,1)",
+    "classifier": "linear_svm",
+    "classifier_params": "C=1.0, seed=42",
+    "train_rows": 78806,
+    "val_rows": 10175,
+    "num_features": 50000,
+    "is_sparse": true,
+    "train_seconds": 19.69433300000128,
+    "eval_seconds": 0.010373600000093575,
+    "metrics": {
+      "accuracy": 0.8651597051597052,
+      "macro_precision": 0.8731635175470718,
+      "macro_recall": 0.8591575076394194,
+      "macro_f1": 0.8651591632125696,
+      "weighted_f1": 0.8646568062314999,
+      "per_class": {
+        "State": {
+          "precision": 0.8401826484018264,
+          "recall": 0.9064039408866995,
+          "f1": 0.8720379146919431,
+          "support": 1624
+        },
+        "International": {
+          "precision": 0.7992518703241895,
+          "recall": 0.85809906291834,
+          "f1": 0.8276307295029051,
+          "support": 1494
+        },
+        "Entertainment": {
+          "precision": 0.8964601769911504,
+          "recall": 0.8932980599647267,
+          "f1": 0.8948763250883393,
+          "support": 1134
+        },
+        "Business": {
+          "precision": 0.8823008849557522,
+          "recall": 0.8456318914334181,
+          "f1": 0.8635773061931572,
+          "support": 1179
+        },
+        "Nation": {
+          "precision": 0.8297067171239356,
+          "recall": 0.7425910245554614,
+          "f1": 0.7837354781054513,
+          "support": 1181
+        },
+        "Technology": {
+          "precision": 0.8516902944383861,
+          "recall": 0.8935926773455377,
+          "f1": 0.8721384701284198,
+          "support": 874
+        },
+        "Sports": {
+          "precision": 0.9509322865554465,
+          "recall": 0.9281609195402298,
+          "f1": 0.9394086282113427,
+          "support": 1044
+        },
+        "Astro": {
+          "precision": 0.930870083432658,
+          "recall": 0.930870083432658,
+          "f1": 0.930870083432658,
+          "support": 839
+        },
+        "Crime": {
+          "precision": 0.8281622911694511,
+          "recall": 0.7244258872651357,
+          "f1": 0.7728285077951003,
+          "support": 479
+        },
+        "Auto": {
+          "precision": 0.922077922077922,
+          "recall": 0.8685015290519877,
+          "f1": 0.8944881889763779,
+          "support": 327
+        }
+      },
+      "support": 10175
+    },
+    "reduced_dim": null,
+    "warnings": [],
+    "artifact_path": "C:\\Users\\harsh\\OneDrive\\Documents\\Desktop\\Gujarati News Article\\models\\experiments\\exp112_tfidf_uni_svm.joblib"
+  },
+  {
+    "index": 113,
+    "feature_type": "tfidf_word_12",
+    "feature_label": "TF-IDF word unigram+bigram (1,2)",
+    "classifier": "logistic_regression",
+    "classifier_params": "max_iter=1000, seed=42, solver=lbfgs",
+    "train_rows": 78806,
+    "val_rows": 10175,
+    "num_features": 50000,
+    "is_sparse": true,
+    "train_seconds": 75.32833869999922,
+    "eval_seconds": 0.0535704000012629,
+    "metrics": {
+      "accuracy": 0.8645700245700245,
+      "macro_precision": 0.8810349425321332,
+      "macro_recall": 0.8497008290623775,
+      "macro_f1": 0.8627050517814412,
+      "weighted_f1": 0.8642072989489188,
+      "per_class": {
+        "State": {
+          "precision": 0.830480397570403,
+          "recall": 0.9261083743842364,
+          "f1": 0.8756914119359535,
+          "support": 1624
+        },
+        "International": {
+          "precision": 0.7963855421686747,
+          "recall": 0.8848728246318608,
+          "f1": 0.8383005707038681,
+          "support": 1494
+        },
+        "Entertainment": {
+          "precision": 0.885589519650655,
+          "recall": 0.8941798941798942,
+          "f1": 0.8898639754278193,
+          "support": 1134
+        },
+        "Business": {
+          "precision": 0.879646017699115,
+          "recall": 0.8430873621713316,
+          "f1": 0.8609787786920745,
+          "support": 1179
+        },
+        "Nation": {
+          "precision": 0.8224907063197026,
+          "recall": 0.7493649449618967,
+          "f1": 0.7842268498006203,
+          "support": 1181
+        },
+        "Technology": {
+          "precision": 0.8444924406047516,
+          "recall": 0.8947368421052632,
+          "f1": 0.8688888888888889,
+          "support": 874
+        },
+        "Sports": {
+          "precision": 0.9680741503604532,
+          "recall": 0.9003831417624522,
+          "f1": 0.9330024813895782,
+          "support": 1044
+        },
+        "Astro": {
+          "precision": 0.947565543071161,
+          "recall": 0.9046483909415971,
+          "f1": 0.925609756097561,
+          "support": 839
+        },
+        "Crime": {
+          "precision": 0.8795811518324608,
+          "recall": 0.7014613778705637,
+          "f1": 0.7804878048780488,
+          "support": 479
+        },
+        "Auto": {
+          "precision": 0.9560439560439561,
+          "recall": 0.7981651376146789,
+          "f1": 0.87,
+          "support": 327
+        }
+      },
+      "support": 10175
+    },
+    "reduced_dim": null,
+    "warnings": [],
+    "artifact_path": "C:\\Users\\harsh\\OneDrive\\Documents\\Desktop\\Gujarati News Article\\models\\experiments\\exp113_tfidf_12_logreg.joblib"
+  },
+  {
+    "index": 114,
+    "feature_type": "tfidf_word_12",
+    "feature_label": "TF-IDF word unigram+bigram (1,2)",
+    "classifier": "linear_svm",
+    "classifier_params": "C=1.0, seed=42",
+    "train_rows": 78806,
+    "val_rows": 10175,
+    "num_features": 50000,
+    "is_sparse": true,
+    "train_seconds": 27.854041799999322,
+    "eval_seconds": 0.027595400000791415,
+    "metrics": {
+      "accuracy": 0.8746928746928747,
+      "macro_precision": 0.8792530136726521,
+      "macro_recall": 0.867919872431842,
+      "macro_f1": 0.8728609579992872,
+      "weighted_f1": 0.8740594742411606,
+      "per_class": {
+        "State": {
+          "precision": 0.8662824207492795,
+          "recall": 0.9254926108374384,
+          "f1": 0.8949091991664185,
+          "support": 1624
+        },
+        "International": {
+          "precision": 0.8263358778625954,
+          "recall": 0.8694779116465864,
+          "f1": 0.8473581213307241,
+          "support": 1494
+        },
+        "Entertainment": {
+          "precision": 0.9048888888888889,
+          "recall": 0.8977072310405644,
+          "f1": 0.9012837538733953,
+          "support": 1134
+        },
+        "Business": {
+          "precision": 0.8894830659536542,
+          "recall": 0.8464800678541137,
+          "f1": 0.8674489352455454,
+          "support": 1179
+        },
+        "Nation": {
+          "precision": 0.8185185185185185,
+          "recall": 0.7485182049110923,
+          "f1": 0.7819548872180451,
+          "support": 1181
+        },
+        "Technology": {
+          "precision": 0.8560606060606061,
+          "recall": 0.9050343249427918,
+          "f1": 0.8798665183537263,
+          "support": 874
+        },
+        "Sports": {
+          "precision": 0.95274831243973,
+          "recall": 0.946360153256705,
+          "f1": 0.9495434887073523,
+          "support": 1044
+        },
+        "Astro": {
+          "precision": 0.9261904761904762,
+          "recall": 0.9272943980929678,
+          "f1": 0.9267421083978559,
+          "support": 839
+        },
+        "Crime": {
+          "precision": 0.8211009174311926,
+          "recall": 0.7473903966597077,
+          "f1": 0.7825136612021858,
+          "support": 479
+        },
+        "Auto": {
+          "precision": 0.930921052631579,
+          "recall": 0.8654434250764526,
+          "f1": 0.8969889064976229,
+          "support": 327
+        }
+      },
+      "support": 10175
+    },
+    "reduced_dim": null,
+    "warnings": [],
+    "artifact_path": "C:\\Users\\harsh\\OneDrive\\Documents\\Desktop\\Gujarati News Article\\models\\experiments\\exp114_tfidf_12_svm.joblib"
+  }
+]

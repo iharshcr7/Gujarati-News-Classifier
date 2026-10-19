@@ -1,0 +1,38 @@
+%% Diagram H - Python module dependency graph
+flowchart TD
+    CFG["config.py"]
+
+    DL["src/data_loader.py"] --> CFG
+    DI["src/dataset_inspection.py"] --> DL
+    PP["src/preprocessing.py"] --> DL
+    WT["src/word2vec_trainer.py"] --> PP
+    WT --> DL
+    DV["src/document_vectors.py"] --> PP
+    DV --> CFG
+    TF["src/text_features.py"] --> DV
+    TF --> CFG
+    EV["src/evaluation.py"] --> CFG
+    CL["src/classification.py"] --> TF
+    CL --> EV
+    CL --> CFG
+    PR["src/prediction.py"] --> CL
+    PR --> PP
+    PR --> DV
+    PR --> CFG
+    EA["src/error_analysis.py"] --> CL
+    EA --> TF
+    EX["src/experiments.py"] --> CL
+    EX --> EA
+
+    APPC["app/content.py"]
+    APPS["app/streamlit_app.py"] --> APPC
+    APPS --> PR
+    APPS --> CFG
+
+    E_INSPECT["inspect_dataset.py"] --> DI
+    E_PREP["preprocess_dataset.py"] --> PP
+    E_W2V["train_word2vec.py"] --> WT
+    E_DV["generate_document_vectors.py"] --> DV
+    E_CLS["run_classification.py"] --> CL
+    E_ERR["run_error_analysis.py"] --> EA
+    E_IMP["run_model_improvement.py"] --> EX

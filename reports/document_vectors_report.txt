@@ -1,0 +1,87 @@
+========================================================================
+GUJARATI SHC DOCUMENT VECTOR GENERATION REPORT (PHASE 4)
+========================================================================
+
+1. EXPERIMENT SCOPE AND DATA LEAKAGE PREVENTION
+------------------------------------------------------------------------
+  Dataset format: SHC
+  Text column:    'text'
+  Label column:   'labels' (preserved, not used to build vectors)
+  Embeddings:     loaded read-only from Phase 3 artifacts
+  Word2Vec retraining: NO
+  Classifier training: NO
+  Vectorization:  mean-pooling of in-vocabulary token embeddings
+  Validation/test rows: never used to train or update Word2Vec
+  Original CSV files: never modified
+
+2. EMBEDDING MODELS (VALIDATED DIMENSIONS)
+------------------------------------------------------------------------
+  --- cbow ---
+    model path:        C:\Users\harsh\OneDrive\Documents\Desktop\Gujarati News Article\models\word2vec_cbow.model
+    sg:                0
+    vector dimension:  100
+    vocabulary size:   210459
+  --- skipgram ---
+    model path:        C:\Users\harsh\OneDrive\Documents\Desktop\Gujarati News Article\models\word2vec_skipgram.model
+    sg:                1
+    vector dimension:  100
+    vocabulary size:   210459
+
+3. ROW COUNTS (PER SPLIT AND MODEL)
+------------------------------------------------------------------------
+  --- train (input rows=78806) ---
+    cbow     : vector rows=  78806  input rows=78806  [OK]
+    skipgram : vector rows=  78806  input rows=78806  [OK]
+  --- validation (input rows=10175) ---
+    cbow     : vector rows=  10175  input rows=10175  [OK]
+    skipgram : vector rows=  10175  input rows=10175  [OK]
+  --- test (input rows=9972) ---
+    cbow     : vector rows=   9972  input rows=9972  [OK]
+    skipgram : vector rows=   9972  input rows=9972  [OK]
+
+4. ZERO-VECTOR FALLBACK RATES (NO IN-VOCABULARY TOKENS)
+------------------------------------------------------------------------
+  cbow      train      : fallback=     1 / 78806 (0.0013%)  empty_token_rows=0  OOV tokens=120634  in-vocab tokens=12223859  mean in-vocab/headline=155.11
+  cbow      validation : fallback=     0 / 10175 (0.0000%)  empty_token_rows=0  OOV tokens=45279  in-vocab tokens=1557385  mean in-vocab/headline=153.06
+  cbow      test       : fallback=     1 / 9972 (0.0100%)  empty_token_rows=0  OOV tokens=42919  in-vocab tokens=1516120  mean in-vocab/headline=152.04
+  skipgram  train      : fallback=     1 / 78806 (0.0013%)  empty_token_rows=0  OOV tokens=120634  in-vocab tokens=12223859  mean in-vocab/headline=155.11
+  skipgram  validation : fallback=     0 / 10175 (0.0000%)  empty_token_rows=0  OOV tokens=45279  in-vocab tokens=1557385  mean in-vocab/headline=153.06
+  skipgram  test       : fallback=     1 / 9972 (0.0100%)  empty_token_rows=0  OOV tokens=42919  in-vocab tokens=1516120  mean in-vocab/headline=152.04
+
+5. DIMENSION AND NUMERICAL FINITENESS CHECKS
+------------------------------------------------------------------------
+  cbow      train      : dim=100  shape=(78806, 100)  finite=True  dimension_ok=True
+  cbow      validation : dim=100  shape=(10175, 100)  finite=True  dimension_ok=True
+  cbow      test       : dim=100  shape=(9972, 100)  finite=True  dimension_ok=True
+  skipgram  train      : dim=100  shape=(78806, 100)  finite=True  dimension_ok=True
+  skipgram  validation : dim=100  shape=(10175, 100)  finite=True  dimension_ok=True
+  skipgram  test       : dim=100  shape=(9972, 100)  finite=True  dimension_ok=True
+  ALL CHECKS PASSED: True
+
+6. LABEL AND ROW-ORDER ALIGNMENT CHECKS
+------------------------------------------------------------------------
+  cbow      train      : rows=78806  row_ids_sequential=True  labels_aligned=True
+  cbow      validation : rows=10175  row_ids_sequential=True  labels_aligned=True
+  cbow      test       : rows=9972  row_ids_sequential=True  labels_aligned=True
+  skipgram  train      : rows=78806  row_ids_sequential=True  labels_aligned=True
+  skipgram  validation : rows=10175  row_ids_sequential=True  labels_aligned=True
+  skipgram  test       : rows=9972  row_ids_sequential=True  labels_aligned=True
+
+7. OUTPUT FILES
+------------------------------------------------------------------------
+  cbow      train      : C:\Users\harsh\OneDrive\Documents\Desktop\Gujarati News Article\data\processed\Gujarati_SHC_LDC_LPC_Train.cbow.docvecs.npz
+    metadata: C:\Users\harsh\OneDrive\Documents\Desktop\Gujarati News Article\data\processed\Gujarati_SHC_LDC_LPC_Train.cbow.docvecs.meta.json
+  cbow      validation : C:\Users\harsh\OneDrive\Documents\Desktop\Gujarati News Article\data\processed\Gujarati_SHC_LDC_LPC_Valid.cbow.docvecs.npz
+    metadata: C:\Users\harsh\OneDrive\Documents\Desktop\Gujarati News Article\data\processed\Gujarati_SHC_LDC_LPC_Valid.cbow.docvecs.meta.json
+  cbow      test       : C:\Users\harsh\OneDrive\Documents\Desktop\Gujarati News Article\data\processed\Gujarati_SHC_LDC_LPC_Test.cbow.docvecs.npz
+    metadata: C:\Users\harsh\OneDrive\Documents\Desktop\Gujarati News Article\data\processed\Gujarati_SHC_LDC_LPC_Test.cbow.docvecs.meta.json
+  skipgram  train      : C:\Users\harsh\OneDrive\Documents\Desktop\Gujarati News Article\data\processed\Gujarati_SHC_LDC_LPC_Train.skipgram.docvecs.npz
+    metadata: C:\Users\harsh\OneDrive\Documents\Desktop\Gujarati News Article\data\processed\Gujarati_SHC_LDC_LPC_Train.skipgram.docvecs.meta.json
+  skipgram  validation : C:\Users\harsh\OneDrive\Documents\Desktop\Gujarati News Article\data\processed\Gujarati_SHC_LDC_LPC_Valid.skipgram.docvecs.npz
+    metadata: C:\Users\harsh\OneDrive\Documents\Desktop\Gujarati News Article\data\processed\Gujarati_SHC_LDC_LPC_Valid.skipgram.docvecs.meta.json
+  skipgram  test       : C:\Users\harsh\OneDrive\Documents\Desktop\Gujarati News Article\data\processed\Gujarati_SHC_LDC_LPC_Test.skipgram.docvecs.npz
+    metadata: C:\Users\harsh\OneDrive\Documents\Desktop\Gujarati News Article\data\processed\Gujarati_SHC_LDC_LPC_Test.skipgram.docvecs.meta.json
+
+========================================================================
+END OF DOCUMENT VECTOR GENERATION REPORT
+========================================================================

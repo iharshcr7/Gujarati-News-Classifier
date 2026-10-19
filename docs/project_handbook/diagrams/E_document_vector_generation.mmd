@@ -1,0 +1,16 @@
+%% Diagram E - Document (headline) vector generation
+flowchart TD
+    H["Headline<br/>e.g. 'ભારતે નવો રેકોર્ડ બનાવ્યો'"] --> PP["preprocess()<br/>cleaned tokens"]
+    PP --> LOOP["For each token"]
+    LOOP --> LOOK{"token in<br/>model.wv.key_to_index?"}
+    LOOK -- "yes (in-vocab)" --> ACC["Add token's<br/>100-d embedding"]
+    LOOK -- "no (OOV)" --> SKIP["Skip token<br/>(not counted)"]
+    ACC --> COUNT["in_vocab_count += 1"]
+    COUNT --> DONE{"more tokens?"}
+    SKIP --> DONE
+    DONE -- yes --> LOOP
+    DONE -- no --> HAS{"in_vocab_count > 0?"}
+    HAS -- yes --> MEAN["vector = sum(embeddings) / in_vocab_count<br/>float32, 100-d"]
+    HAS -- "no (all OOV / empty)" --> ZERO["Zero vector (100 zeros)<br/>counted in fallback_count"]
+    MEAN --> SAVE["Save X + labels + row_ids<br/>*.docvecs.npz + *.meta.json"]
+    ZERO --> SAVE

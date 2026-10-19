@@ -1,0 +1,52 @@
+# Virtual Environment
+.venv/
+env/
+venv/
+ENV/
+
+# Python cache & build artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Model artifacts
+models/*
+!models/.gitkeep
+
+# Reports and outputs (keep templates/scripts, ignore generated images/reports if needed)
+# Keep reports directory structure
+
+# Large dataset files (raw and processed data)
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+reports/error_analysis/validation_predictions.csv
+reports/error_analysis/validation_misclassified.csv
+reports/error_analysis/validation_confusion_pairs.csv
+
+# IDE & OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Superpowers scratch
+.superpowers/

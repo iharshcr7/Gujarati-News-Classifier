@@ -1,0 +1,19 @@
+%% Diagram C - Text preprocessing pipeline (src/preprocessing.py)
+flowchart TD
+    IN["Raw headline string<br/>(may contain URLs, HTML, punctuation)"] --> VALID{"is_valid_text?<br/>non-empty, is a string"}
+    VALID -- "no (None/NaN/empty)" --> EMPTY["Return empty cleaned text<br/>0 tokens"]
+    VALID -- "yes" --> URL["Remove URLs"]
+    URL --> HTML["Remove HTML tags"]
+    HTML --> EMAIL["Remove email addresses"]
+    EMAIL --> PUNCT["Replace non-token characters<br/>with a single space"]
+    PUNCT --> WS["Collapse repeated whitespace<br/>and strip"]
+    WS --> TOK["tokenize()<br/>split on whitespace"]
+    TOK --> STOP{"remove_stopwords?<br/>(disabled by default)"}
+    STOP -- "yes" --> REM["Drop tokens in<br/>DEFAULT_GUJARATI_STOPWORDS"]
+    STOP -- "no" --> KEEP["Keep all tokens"]
+    REM --> OUT["PreprocessedText<br/>cleaned_text + tokens"]
+    KEEP --> OUT
+    EMPTY --> OUT
+
+    GUJ["Gujarati vowel signs<br/>U+0ABE..U+0AC5<br/>preserved unchanged"] -.-> PUNCT
+    GUJ -.-> TOK

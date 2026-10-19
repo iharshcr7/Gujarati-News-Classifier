@@ -1,0 +1,70 @@
+%% Diagram A - End-to-end system architecture
+%% Gujarati News Classifier
+flowchart TD
+    subgraph DATA["1. Data (data/raw/)"]
+        RAW["Gujarati_SHC_LDC_LPC_Train.csv<br/>79,416 rows"]
+        VAL["...Valid.csv<br/>10,251 rows"]
+        TST["...Test.csv<br/>10,041 rows"]
+    end
+
+    subgraph INSPECT["2. Inspection (Phase 1)"]
+        DI["inspect_dataset.py<br/>src/dataset_inspection.py"]
+    end
+
+    subgraph PREP["3. Preprocessing (Phase 2)"]
+        PP["preprocess_dataset.py<br/>src/preprocessing.py"]
+        CLN["Cleaned splits<br/>78,806 / 10,175 / 9,972"]
+    end
+
+    subgraph W2V["4. Word2Vec training (Phase 3)"]
+        CBOW["word2vec_cbow.model<br/>(sg=0)"]
+        SKIP["word2vec_skipgram.model<br/>(sg=1)"]
+    end
+
+    subgraph DOCVEC["5. Document vectors (Phase 4)"]
+        DV["generate_document_vectors.py<br/>mean-pool 100-d vectors"]
+        NPZ["data/processed/*.docvecs.npz<br/>+ .meta.json"]
+    end
+
+    subgraph CLS["6. Classification (Phase 5)"]
+        FEAT["Feature configs A/B/C<br/>docvec CBOW, docvec Skip-gram, TF-IDF"]
+        MODELS["4 classifiers x 3 configs<br/>LogReg, LinearSVC, RandomForest, HistGB"]
+        SEL["Select by validation macro-F1"]
+        TEST["Evaluate once on test split"]
+        ART["models/classifiers/selected_model.joblib"]
+    end
+
+    subgraph P7["7. Error analysis + improvement (Phase 7)"]
+        ERR["run_error_analysis.py<br/>reports/error_analysis/*"]
+        IMP["run_model_improvement.py<br/>experiments exp100-114"]
+        DEC["Decision: RETAIN selected model"]
+    end
+
+    subgraph GUI["8. GUI (Phase 6)"]
+        APP["streamlit run app/streamlit_app.py"]
+        PRED["src/prediction.NewsClassifier"]
+    end
+
+    RAW --> DI
+    VAL --> DI
+    TST --> DI
+    DI --> PP
+    PP --> CLN
+    CLN --> W2V
+    CBOW --> DV
+    SKIP --> DV
+    CLN --> DV
+    DV --> NPZ
+    NPZ --> FEAT
+    CLN --> FEAT
+    FEAT --> MODELS
+    MODELS --> SEL
+    SEL --> TEST
+    SEL --> ART
+    ART --> ERR
+    ART --> IMP
+    ART --> PRED
+    ERR --> IMP
+    IMP --> DEC
+    DEC --> PRED
+    PRED --> APP

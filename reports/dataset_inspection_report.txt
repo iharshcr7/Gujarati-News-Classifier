@@ -1,0 +1,147 @@
+========================================================================
+GUJARATI NEWS DATASET INSPECTION REPORT
+========================================================================
+
+1. DATASET DIMENSIONS AND ROW COUNTS
+------------------------------------------------------------------------
+  train       : rows=  79416  cols=2  shape=(79416, 2)
+  validation  : rows=  10251  cols=2  shape=(10251, 2)
+  test        : rows=  10041  cols=2  shape=(10041, 2)
+
+2. COLUMN NAMES AND DATA TYPES
+------------------------------------------------------------------------
+  train:
+    - text: str
+    - labels: str
+  validation:
+    - text: str
+    - labels: str
+  test:
+    - text: str
+    - labels: str
+
+3. SAMPLE RECORDS (first 3 per split)
+------------------------------------------------------------------------
+--- train sample records ---
+  (showing 3 of 79416 rows)
+  row 0: label='International' | text='અમદાવાદ, 23 જાન્યુઆરી સોમવાર 2023અમદાવાદના ત્રણ મિત્રો ન્યૂ ઝીલેન્ડના ઓકલેન્ડમાં પીહા બીચ પર ફરવા ગયા હતાં. જ્યાં બે મિત્રો દરિયામાં ડૂબી જતાં મોત તેમનું મોત નીપજ્યું હતું. જ્યારે એક મિત્ર તરતા આવડતું હોવાથી તેનો જીવ બચાવી શક્યો હતો.\xa0પોસ્ટમોર્ટમ બાદ તેમનો મૃતદેહ પરિવારજનોને સોંપાશેપ્રાપ્ત વિગતો પ્રમાણે અંશુલ શાહ,અપૂર્વ મોદી અને સૌરીન પટેલ તેમની પત્નીઓ સાથે દરિયાકિનારે ફરવા માટે ગયા હતા. આ ત્રણેય જણામાંથી બે જણા દરિયામાં ડૂબી જતાં મોત નીપજ્યું હતું.ત્રણેય ખાસ મિત્રો ફરવા માટે દરિયાકિનારે ગયા હતા અને એમાં પત્નીની નજરની સામે જ મોત થતાં પરિવારજનો ભારે આઘાતમાં છે. આવતીકાલે પોસ્ટમોર્ટમની કાર્યવાહી બાદ તેમનો મૃતદેહ પરિવારજનોને સોંપાશે.\xa0લગભગ 15 મિનિટ પછી કોસ્ટગાર્ડ્સ આવ્યાપરંતુ તેમને લાવવા માટે ખૂબ મોટો ખર્ચ થઈ શકે છે, જેથી હવે પરિવારજનો પણ આર્થિક સંકળામણને કારણે મૃતદેહ લાવશે કે કેમ એનો નિર્ણય આવતીકાલે લેશે. કોઈએ 111 પર ફોન કર્યો અને લગભગ 15 મિનિટ પછી કોસ્ટગાર્ડ્સ આવ્યા. ત્યાર બાદ બીજી 15 કે 20 મિનિટ પછી દરિયામાં ડૂબેલા બંને યુવાનને કિનારે લાવ્યા હતા. બંનેને CRP આપવાનો પ્રયત્ન કર્યો હતો ,પરંતુ તેઓનો જીવ બચાવી શક્યા ન હતા.'
+  row 1: label='Astro' | text='Shrawan Pradosh Vrat 2022: શ્રાવણ  ભૌમ પ્રદોષ વ્રતનું છે અનેરૂ મહત્વ, આ વિધિથી પૂજા કરવાથી થાય છે લાભ'
+  row 2: label='Crime' | text='Ankleshwar : યુવકને પોતાની બહેન સાથે આડાસંબંધ હોવાની ભાઇને પડી શંકા ને પછી તો.....'
+
+--- validation sample records ---
+  (showing 3 of 10251 rows)
+  row 0: label='Astro' | text=' આ દરમિયાન પૂજા-પાઠ કરવા નહીં\t\t\t\t\t\t\t\tBy : એબીપી અસ્મિતા વેબ ટીમ  નવી દિલ્હીઃ વર્ષ 2019ના અંતિમ સૂર્યગ્રહણની શરૂઆત થઈ ગઈ છે\xa0ગ્રહણ સવારે 8'
+  row 1: label='Business' | text='UPI-PayNow: ભારત અને સિંગાપોર વચ્ચે ડિજિટલ પેમેન્ટ બનશે સરળ, UPI-PayNow વચ્ચે કરાર થયો'
+  row 2: label='Nation' | text='abplivecom | Updated at : 31 Oct 2022 12:20 PM (IST)  \nપ્રતિકાત્મક તસવીર  ( Image Source : PTI )Supreme Court Two-finger Test Ban: સુપ્રીમ કોર્ટે સોમવારે બળાત્કારના કેસોમાં \'ટુ-ફિંગર ટેસ્ટ\' પર પ્રતિબંધ મૂક્યો હતો કોર્ટે ચેતવણી આપી હતી કે જે વ્યક્તિઓ આવા પરીક્ષણો કરાવે છે તેમને દોષિત ઠેરવવામાં આવશે જસ્ટિસ ચંદ્રચુડની આગેવાની હેઠળની બેન્ચે ચુકાદો સંભળાવતા બળાત્કાર અને જાતીય હુમલાના કેસોમાં \'ટુ-ફિંગર ટેસ્ટ\'ના ઉપયોગની નિંદા કરી હતી જસ્ટિસ ચંદ્રચુડે ચુકાદો સંભળાવતા કહ્યું કે, "આ ટેસ્ટનો કોઈ વૈજ્ઞાનિક આધાર નથી પીડિતાની જાતીય સતામણીનાં પુરાવા તરીકે તે મહત્વનું નથી'
+
+--- test sample records ---
+  (showing 3 of 10041 rows)
+  row 0: label='International' | text=' પછી તે તેમા જ રહેવા લાગ્યો હતો અને તેનુ ઘર ભાડા પર આપી દીધુ તમે વિચારતા હશો કે આવુ કરવા પાછળ શું કારણ હશે વાસ્તવમાં આ શખ્સે જ્યારે પોતાનું મકાન ભાડા પર આપ્યુ ત્યારથી તેના ખર્ચા ઓછા થઈ ગયા છે રિપોર્ટ પ્રમાણે આ પૈસાથી પોતાના મકાનની લોન ચુકતે કરે છે અને તેના બીજા ખર્ચમાં પણ લાભ થાય છે'
+  row 1: label='Entertainment' | text=" આ ફિલ્મ કંઈ ખાસ ઉકાળી શકી નહોતી, પરંતુ કરીનાને સતત એક પછી એક ઘણી ફિલ્મોની ઓફર કરવામાં આવી હતી તે દરમિયાન કરીનાએ રિતિક રોશન સાથે ઘણી ફિલ્મો કરી હતી બંને 'કભી ખુશી કભી ગમ', 'મુઝસે દોસ્તી કરોગે', 'મૈં પ્રેમ કી દીવાની હૂં', 'યાદેં' જેવી ફિલ્મોમાં સાથે જોવા મળ્યા હતા લોકોને તેમની કેમેસ્ટ્રી પણ ખૂબ પસંદ આવી હતીકરિના અને રિતિકના અફેરની ચર્ચાઓતે સમયે એવા સમાચાર આવ્યા હતા કે, કરીના અને રિતિક વચ્ચે અફેર ચાલી રહ્યું છે કરીના હૃતિક માટે પાગલ બની ગઈ હતી અને પરિણીત હોવા છતાં રિતિકને લઈ કરીનાને અલગ જ ફિલિંગ્સ હતી મામલો એટલો આગળ વધી ગયો હતો કે, રિતિકના પરિવારે બંને વચ્ચે આવીને તેમને અલગ કરવા પડ્યા હતાA post shared by Shinta Dewi (@hrithik_kareena)\n\nરિતિકને લઈને કરીનાએ કહ્યું હતું કંઈક ખાસતે સમયે હૃતિકે ટેલીચક્કરને આપેલા ઈન્ટરવ્યુમાં આ વાતોનો ઈન્કાર કર્યો હતો તેણે કહ્યું હતું કે, આ બધા અહેવાલોમાં કોઈ જ તથ્ય નથી મને મારા પોતાના માટે ખરાબ નથી લાગતું પરંતુ તેમના માટે લાગે છે તે ખૂબ જ સ્વીટ છોકરી છે"
+  row 2: label='Crime' | text='Surat : યુવકની રહસ્યમય હત્યાથી મચી ગયો ખળભળાટ, પોલીસે કોની શરૂ કરી પૂછપરછ?'
+
+4. MISSING-VALUE COUNTS
+------------------------------------------------------------------------
+--- train missing values ---
+  text: 605 missing
+  labels: 0 missing
+
+--- validation missing values ---
+  text: 74 missing
+  labels: 3 missing
+
+--- test missing values ---
+  text: 69 missing
+  labels: 3 missing
+
+5. DUPLICATE-ROW COUNTS (within each split)
+------------------------------------------------------------------------
+  train: 671 duplicate rows
+  validation: 69 duplicate rows
+  test: 62 duplicate rows
+
+6. EMPTY / WHITESPACE-ONLY TEXT COUNTS
+------------------------------------------------------------------------
+  train: 5 empty/whitespace-only text rows
+  validation: 2 empty/whitespace-only text rows
+  test: 0 empty/whitespace-only text rows
+
+7. CATEGORY DISTRIBUTION FOR LABEL COLUMN
+------------------------------------------------------------------------
+--- train category distribution ('labels') ---
+  'State': 12552
+  'International': 12195
+  'Entertainment': 8895
+  'Business': 8871
+  'Nation': 8742
+  'Technology': 7881
+  'Sports': 7116
+  'Astro': 6897
+  'Crime': 3720
+  'Auto': 2547
+  distinct labels: 10
+
+--- validation category distribution ('labels') ---
+  'State': 1629
+  'International': 1494
+  'Nation': 1182
+  'Business': 1179
+  'Entertainment': 1134
+  'Sports': 1044
+  'Technology': 927
+  'Astro': 840
+  'Crime': 486
+  'Auto': 333
+  nan: 3
+  distinct labels: 11
+
+--- test category distribution ('labels') ---
+  'International': 1554
+  'State': 1524
+  'Nation': 1122
+  'Business': 1089
+  'Entertainment': 1047
+  'Sports': 1035
+  'Astro': 927
+  'Technology': 903
+  'Crime': 498
+  'Auto': 339
+  nan: 3
+  distinct labels: 11
+
+8. GUJARATI UNICODE INTEGRITY CHECK
+------------------------------------------------------------------------
+--- train Gujarati Unicode integrity ---
+  non-empty text rows: 79411
+  rows containing Gujarati (U+0A80..U+0AFF): 78606
+  Gujarati coverage: 98.99%
+
+--- validation Gujarati Unicode integrity ---
+  non-empty text rows: 10249
+  rows containing Gujarati (U+0A80..U+0AFF): 10153
+  Gujarati coverage: 99.06%
+
+--- test Gujarati Unicode integrity ---
+  non-empty text rows: 10041
+  rows containing Gujarati (U+0A80..U+0AFF): 9948
+  Gujarati coverage: 99.07%
+
+9. CROSS-SPLIT DUPLICATE AND CONFLICTING-LABEL CHECKS
+------------------------------------------------------------------------
+  train ∩ validation shared texts: 434
+  train ∩ test shared texts:       413
+  validation ∩ test shared texts:  71
+  train-validation conflicting labels: 82
+  train-test conflicting labels:       101
+  validation-test conflicting labels:  22
+
+10. SHC COLUMN SUMMARY
+------------------------------------------------------------------------
+  Selected dataset format: SHC
+  Text column used for SHC: 'text'
+  Label column used for SHC: 'labels'
+  NOTE: The CSV files expose only two columns (`text` and `labels`); there are no separate SHC/LDC/LPC fields despite the filenames. The `text` column is therefore used as the SHC text source.
+
+========================================================================
+END OF REPORT
+========================================================================

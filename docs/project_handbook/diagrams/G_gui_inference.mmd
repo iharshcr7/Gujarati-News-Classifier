@@ -1,0 +1,22 @@
+%% Diagram G - GUI inference sequence (Streamlit)
+sequenceDiagram
+    actor User
+    participant UI as app/streamlit_app.py
+    participant NC as src/prediction.NewsClassifier
+    participant PP as src/preprocessing
+    participant DV as src/document_vectors
+    participant MD as selected_model.joblib
+
+    User->>UI: types Gujarati headline, clicks Predict
+    UI->>UI: validate input (non-empty)
+    UI->>NC: get_classifier() (st.cache_resource)
+    Note over NC,MD: loaded once per session
+    NC->>MD: load artifact (HistGradientBoosting + metadata)
+    NC->>PP: preprocess(headline)
+    PP-->>NC: cleaned tokens
+    NC->>DV: mean_pool_tokens(tokens, skipgram model)
+    DV-->>NC: 100-d vector (zero vector if all OOV)
+    NC->>MD: model.predict_proba(vector)
+    MD-->>NC: score per category
+    NC-->>UI: (label, scores)
+    UI->>User: result card + sorted score bars

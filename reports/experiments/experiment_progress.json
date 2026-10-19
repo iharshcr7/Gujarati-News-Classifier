@@ -1,0 +1,94 @@
+{
+  "completed": [
+    {
+      "index": 100,
+      "key": "sg_histgb_control",
+      "macro_f1": 0.8882740742840738,
+      "accuracy": 0.8947420147420148
+    },
+    {
+      "index": 101,
+      "key": "sg_histgb_iter100",
+      "macro_f1": 0.8853034383932494,
+      "accuracy": 0.8914987714987715
+    },
+    {
+      "index": 102,
+      "key": "sg_histgb_iter300",
+      "macro_f1": 0.8882740742840738,
+      "accuracy": 0.8947420147420148
+    },
+    {
+      "index": 103,
+      "key": "sg_histgb_lr005",
+      "macro_f1": 0.8846084360158935,
+      "accuracy": 0.8919901719901719
+    },
+    {
+      "index": 104,
+      "key": "sg_histgb_leaves15",
+      "macro_f1": 0.8710188538669451,
+      "accuracy": 0.8770515970515971
+    },
+    {
+      "index": 105,
+      "key": "sg_histgb_leaves63",
+      "macro_f1": 0.8861666146319784,
+      "accuracy": 0.8934643734643735
+    },
+    {
+      "index": 106,
+      "key": "sg_histgb_l2_1",
+      "macro_f1": 0.8886352953023964,
+      "accuracy": 0.8944471744471745
+    },
+    {
+      "index": 107,
+      "key": "sg_histgb_lr005_leaves63",
+      "macro_f1": 0.8889087756457522,
+      "accuracy": 0.8958230958230958
+    },
+    {
+      "index": 108,
+      "key": "cbow_histgb_control",
+      "macro_f1": 0.8628119980577196,
+      "accuracy": 0.8686977886977887
+    },
+    {
+      "index": 109,
+      "key": "cbow_histgb_lr005",
+      "macro_f1": 0.8609791473673478,
+      "accuracy": 0.8666339066339066
+    },
+    {
+      "index": 110,
+      "key": "cbow_histgb_iter300_leaves63_l2_1",
+      "macro_f1": 0.8625783612934098,
+      "accuracy": 0.8692874692874692
+    },
+    {
+      "index": 111,
+      "key": "tfidf_uni_logreg",
+      "macro_f1": 0.8580088382160656,
+      "accuracy": 0.8566093366093366
+    },
+    {
+      "index": 112,
+      "key": "tfidf_uni_svm",
+      "macro_f1": 0.8651591632125696,
+      "accuracy": 0.8651597051597052
+    },
+    {
+      "index": 113,
+      "key": "tfidf_12_logreg",
+      "macro_f1": 0.8627050517814412,
+      "accuracy": 0.8645700245700245
+    },
+    {
+      "index": 114,
+      "key": "tfidf_12_svm",
+      "macro_f1": 0.8728609579992872,
+      "accuracy": 0.8746928746928747
+    }
+  ]
+}

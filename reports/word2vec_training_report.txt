@@ -1,0 +1,87 @@
+========================================================================
+GUJARATI SHC WORD2VEC TRAINING REPORT (PHASE 3)
+========================================================================
+
+1. EXPERIMENT SCOPE AND DATA LEAKAGE PREVENTION
+------------------------------------------------------------------------
+  Dataset format: SHC
+  Text column:    'text'
+  Label column:   'labels' (unused by Word2Vec)
+  Train rows:     training text only
+  Validation rows: NOT used for embedding training
+  Test rows:      NOT used for embedding training
+  Category labels: not used to train Word2Vec (unsupervised).
+  Original CSV files: never modified.
+
+2. TRAINING DATA
+------------------------------------------------------------------------
+  Training headlines processed: 78806
+  Tokenized headlines:          78806
+  Empty token lists:            0 (0.00%)
+  Discarded tokens (freq < min_count=2): 18539
+  Gujarati-bearing rows:        78606
+  Gujarati Unicode chars (pre-tokenization): 54358451
+
+3. SHARED TRAINING PARAMETERS
+------------------------------------------------------------------------
+  --- CBOW (sg=0) ---
+    sg:               0
+    vector_size:      100
+    window:           5
+    min_count:        2
+    workers:          8
+    seed:             42
+    epochs:           10
+    gensim fast version: 0
+
+  --- Skip-gram (sg=1) ---
+    sg:               1
+    vector_size:      100
+    window:           5
+    min_count:        2
+    workers:          8
+    seed:             42
+    epochs:           10
+    gensim fast version: 0
+
+4. MODEL DIAGNOSTICS
+------------------------------------------------------------------------
+  --- CBOW (sg=0) ---
+    Vocabulary size:            210459
+    Embedding dimensions:       100
+    Model artifact path:        C:\Users\harsh\OneDrive\Documents\Desktop\Gujarati News Article\models\word2vec_cbow.model
+    Model artifact size (bytes): 9369176
+
+  --- Skip-gram (sg=1) ---
+    Vocabulary size:            210459
+    Embedding dimensions:       100
+    Model artifact path:        C:\Users\harsh\OneDrive\Documents\Desktop\Gujarati News Article\models\word2vec_skipgram.model
+    Model artifact size (bytes): 9369178
+
+5. COMPARISON: CBOW vs Skip-gram
+------------------------------------------------------------------------
+  Vocabulary size   : CBOW=210459  Skip-gram=210459
+  Embedding dims    : CBOW=100  Skip-gram=100
+  Note: Word2Vec training loss is not used to claim classification
+        superiority; classifiers are implemented in a later phase.
+
+6. NEAREST-NEIGHBOR EXAMPLES - CBOW (sg=0)
+------------------------------------------------------------------------
+  'ગુજરાતી' -> રંગભૂમિમાં (0.599)  |  ઝુલન (0.588)  |  પંજાબી (0.585)  |  મલયાલમ (0.558)  |  નાયિકા (0.557)
+
+7. NEAREST-NEIGHBOR EXAMPLES - SKIP-GRAM (sg=1)
+------------------------------------------------------------------------
+  'ગુજરાતી' -> આલ્બમની (0.648)  |  રચનાઓથી (0.640)  |  રંગભૂમિમાં (0.626)  |  રમાનારો (0.613)  |  ફરજીજિયાત (0.610)
+
+8. GUJARATI TEXT PRESERVATION AND VOCABULARY CHECKS
+------------------------------------------------------------------------
+  Gujarati words in CBOW vocab: 179442 / 210459 (85.3%)
+  Gujarati words in Skip-gram vocab: 179442 / 210459 (85.3%)
+  Sample Gujarati vocab (CBOW): ['છે', 'અને', 'આ', 'કે', 'પર', 'પણ', 'કરી', 'માટે']
+  Sample Gujarati vocab (Skip-gram): ['છે', 'અને', 'આ', 'કે', 'પર', 'પણ', 'કરી', 'માટે']
+  Gujarati vocab coverage adequate: >= 5 Gujarati words learned per model (CBOW=179442, Skip-gram=179442)
+  Validation and test Gujarati text was NOT used for embedding training.
+
+========================================================================
+END OF WORD2VEC TRAINING REPORT
+========================================================================

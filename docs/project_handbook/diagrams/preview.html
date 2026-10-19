@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Gujarati News Classifier - Diagram Preview</title>
+<style>
+  :root { --bg:#f7f5f0; --ink:#1b2a4a; --accent:#0f8a8a; }
+  body { margin:0; background:var(--bg); color:var(--ink);
+         font-family:"Segoe UI", system-ui, sans-serif; }
+  header { padding:24px 32px; border-bottom:2px solid var(--accent); }
+  h1 { margin:0 0 6px; font-size:22px; }
+  header p { margin:0; color:#5a6a86; font-size:14px; }
+  main { max-width:1100px; margin:0 auto; padding:24px 32px 64px; }
+  section { background:#fff; border:1px solid #e3ded3; border-radius:10px;
+            margin:24px 0; padding:16px 20px; }
+  h2 { font-size:16px; margin:4px 0 12px; color:var(--accent); }
+  .mermaid { text-align:center; overflow:auto; }
+  footer { text-align:center; color:#8a94a8; font-size:12px; padding:24px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Gujarati News Classifier &mdash; Diagram Preview</h1>
+  <p>Self-contained viewer. Renders the eight handbook diagrams with Mermaid
+     (loaded from a CDN; needs internet on first open).</p>
+</header>
+<main>
+  <section><h2>A. End-to-end system architecture</h2>
+  <pre class="mermaid">
+flowchart TD
+    DATA["data/raw CSVs"] --> INSPECT["inspect_dataset.py"]
+    INSPECT --> PREP["preprocess_dataset.py"]
+    PREP --> W2V["train_word2vec.py (CBOW + skip-gram)"]
+    W2V --> DV["generate_document_vectors.py"]
+    PREP --> DV
+    DV --> FEAT["feature configs A/B/C"]
+    PREP --> FEAT
+    FEAT --> CLS["run_classification.py (12 experiments)"]
+    CLS --> SEL["selected_model.joblib"]
+    SEL --> ERR["run_error_analysis.py"]
+    SEL --> IMP["run_model_improvement.py"]
+    ERR --> IMP
+    IMP --> PRED["src/prediction.NewsClassifier"]
+    SEL --> PRED
+    PRED --> GUI["streamlit run app/streamlit_app.py"]
+  </pre></section>
+
+  <section><h2>B. Repository directory map</h2>
+  <pre class="mermaid">
+flowchart LR
+    ROOT["Gujarati News Article/"]
+    ROOT --> CFG["config.py"]
+    ROOT --> SRC["src/ library modules"]
+    ROOT --> APP["app/ GUI"]
+    ROOT --> DATA["data/ raw + processed"]
+    ROOT --> MODELS["models/"]
+    ROOT --> REPORTS["reports/"]
+    ROOT --> TESTS["tests/"]
+    ROOT --> DOCS["docs/"]
+  </pre></section>
+
+  <section><h2>C. Preprocessing pipeline</h2>
+  <pre class="mermaid">
+flowchart TD
+    IN["Raw headline"] --> VALID{"is_valid_text?"}
+    VALID -- no --> EMPTY["empty text, 0 tokens"]
+    VALID -- yes --> URL["Remove URLs"] --> HTML["Remove HTML"] --> EMAIL["Remove emails"]
+    EMAIL --> PUNCT["Replace non-token chars with space"]
+    PUNCT --> WS["Collapse whitespace / strip"]
+    WS --> TOK["tokenize (split whitespace)"]
+    TOK --> STOP{"remove_stopwords? default off"}
+    STOP -- yes --> REM["drop stopwords"]
+    STOP -- no --> KEEP["keep tokens"]
+    REM --> OUT["PreprocessedText"]
+    KEEP --> OUT
+    EMPTY --> OUT
+  </pre></section>
+
+  <section><h2>D. CBOW vs Skip-gram</h2>
+  <pre class="mermaid">
+flowchart LR
+    subgraph CBOWG["CBOW (sg=0): context -> target"]
+        CI1["w(i-2)"] --> CH["sum/average"] --> CO["predict w(i)"]
+        CI2["w(i-1)"] --> CH
+        CI3["w(i+1)"] --> CH
+        CI4["w(i+2)"] --> CH
+    end
+    subgraph SKIPG["Skip-gram (sg=1): target -> context"]
+        SI["w(i)"] --> SO1["predict w(i-2)"]
+        SI --> SO2["predict w(i-1)"]
+        SI --> SO3["predict w(i+1)"]
+        SI --> SO4["predict w(i+2)"]
+    end
+  </pre></section>
+
+  <section><h2>E. Document vector generation</h2>
+  <pre class="mermaid">
+flowchart TD
+    H["Headline"] --> PP["preprocess -> tokens"]
+    PP --> LOOP["For each token"]
+    LOOP --> LOOK{"in vocabulary?"}
+    LOOK -- yes --> ACC["add 100-d embedding"]
+    LOOK -- no --> SKIP["skip (OOV)"]
+    ACC --> DONE{"more tokens?"}
+    SKIP --> DONE
+    DONE -- yes --> LOOP
+    DONE -- no --> HAS{"any in-vocab?"}
+    HAS -- yes --> MEAN["mean of in-vocab vectors"]
+    HAS -- no --> ZERO["zero vector + fallback count"]
+    MEAN --> SAVE["docvecs.npz + meta.json"]
+    ZERO --> SAVE
+  </pre></section>
+
+  <section><h2>F. Classification and evaluation</h2>
+  <pre class="mermaid">
+flowchart TD
+    TRAIN["Cleaned train split"] --> A["Config A: skipgram docvecs"]
+    TRAIN --> B["Config B: cbow docvecs"]
+    TRAIN --> C["Config C: TF-IDF (train only)"]
+    A --> E1["4 estimators"]
+    B --> E1
+    C --> E2["sparse: LogReg, LinearSVC"]
+    C --> E3["SVD dense: RandomForest, HistGB"]
+    E1 --> GRID["12 experiments"]
+    E2 --> GRID
+    E3 --> GRID
+    GRID --> VALM["validation macro-F1 ranking"]
+    VALM --> BEST["best = exp008 skipgram + HistGB"]
+    BEST --> TESTONCE["test once: macro-F1 0.8910"]
+    TESTONCE --> ART["selected_model.joblib"]
+  </pre></section>
+
+  <section><h2>G. GUI inference sequence</h2>
+  <pre class="mermaid">
+sequenceDiagram
+    actor User
+    participant UI as streamlit_app.py
+    participant NC as NewsClassifier
+    participant PP as preprocessing
+    participant DV as document_vectors
+    participant MD as selected_model.joblib
+    User->>UI: type headline, click Predict
+    UI->>NC: get_classifier (cached)
+    NC->>MD: load artifact
+    NC->>PP: preprocess(headline)
+    PP-->>NC: cleaned tokens
+    NC->>DV: mean_pool_tokens (skipgram)
+    DV-->>NC: 100-d vector
+    NC->>MD: predict_proba
+    MD-->>NC: scores
+    NC-->>UI: label + scores
+    UI->>User: result card + score bars
+  </pre></section>
+
+  <section><h2>H. Python module dependency graph</h2>
+  <pre class="mermaid">
+flowchart TD
+    CFG["config.py"]
+    DL["src/data_loader.py"] --> CFG
+    DI["src/dataset_inspection.py"] --> DL
+    PP["src/preprocessing.py"] --> DL
+    WT["src/word2vec_trainer.py"] --> PP
+    WT --> DL
+    DV["src/document_vectors.py"] --> PP
+    DV --> CFG
+    TF["src/text_features.py"] --> DV
+    TF --> CFG
+    EV["src/evaluation.py"] --> CFG
+    CL["src/classification.py"] --> TF
+    CL --> EV
+    PR["src/prediction.py"] --> CL
+    PR --> PP
+    PR --> DV
+    APPS["app/streamlit_app.py"] --> PR
+    APPS --> CFG
+  </pre></section>
+</main>
+<footer>Gujarati News Classifier handbook &mdash; diagrams preview</footer>
+<script type="module">
+  import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
+  mermaid.initialize({ startOnLoad: true, securityLevel: "loose", theme: "base",
+    themeVariables: { primaryColor: "#eef6f6", primaryBorderColor: "#0f8a8a",
+      primaryTextColor: "#1b2a4a", lineColor: "#5a6a86", fontFamily: "Segoe UI, sans-serif" } });
+</script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+========================================================================
+GUJARATI NEWS CLASSIFICATION REPORT (PHASE 5, VALIDATION)
+========================================================================
+
+1. SCOPE AND DATA-LEAKAGE PREVENTION
+------------------------------------------------------------------------
+  Text column:     'text'
+  Label column:    'labels'
+  Categories:      State, International, Entertainment, Business, Nation, Technology, Sports, Astro, Crime, Auto
+  Train rows:      78806
+  Validation rows: 10175 (used for model selection)
+  Test rows:       9972 (untouched during selection)
+  TF-IDF:          fitted on training text only
+  Word2Vec:        loaded read-only, never retrained
+  Original CSVs:   never modified
+  Primary metric:  macro-F1 (secondary: accuracy)
+
+2. FEATURE CONFIGURATIONS
+------------------------------------------------------------------------
+  cbow        : CBOW doc vectors (100d)  dims=100
+  skipgram    : Skip-gram doc vectors (100d)  dims=100
+  tfidf_word  : TF-IDF word n-grams  analyzer=word  ngram=(1, 2)  vocab=50000
+  NOTE tfidf_char: Character n-grams were measured on the full training split: fitting + transforming took ~459s and produced a ~74.5M-nonzero (78806 x 100000) CSR matrix taking >1.2 GB, on a machine with 7.2 GB total RAM. Training four classifiers on top of that is not practical here, so the word-level baseline is used instead. Set enabled=True (and expect a long run) to attempt it.
+
+3. EXPERIMENT INVENTORY
+------------------------------------------------------------------------
+ index    feature_type          classifier  num_features reduced_dim  train_rows  val_rows  train_seconds  eval_seconds
+     1     docvec:cbow logistic_regression           100                   78806     10175         13.504         0.030
+     2     docvec:cbow          linear_svm           100                   78806     10175         24.293         0.010
+     3     docvec:cbow       random_forest           100                   78806     10175         74.741         0.377
+     4     docvec:cbow   gradient_boosting           100                   78806     10175        114.825         2.642
+     5 docvec:skipgram logistic_regression           100                   78806     10175          7.880         0.032
+     6 docvec:skipgram          linear_svm           100                   78806     10175         19.953         0.012
+     7 docvec:skipgram       random_forest           100                   78806     10175         77.102         2.767
+     8 docvec:skipgram   gradient_boosting           100                   78806     10175         99.307         2.091
+     9      tfidf_word logistic_regression         50000                   78806     10175         66.845         0.105
+    10      tfidf_word          linear_svm         50000                   78806     10175         25.983         0.022
+    11      tfidf_word       random_forest         50000         256       78806     10175        134.621         0.629
+    12      tfidf_word   gradient_boosting         50000         256       78806     10175        316.904         3.979
+
+4. VALIDATION COMPARISON (sorted by macro-F1)
+------------------------------------------------------------------------
+| Rank | Experiment | Feature | Classifier | Macro-F1 | Accuracy | Weighted-F1 | Macro-P | Macro-R |
+|---|---|---|---|---|---|---|---|---|
+| 1 | 8 | Skip-gram doc vectors (100d) | gradient_boosting | 0.8883 | 0.8947 | 0.8942 | 0.8952 | 0.8826 |
+| 2 | 5 | Skip-gram doc vectors (100d) | logistic_regression | 0.8837 | 0.8896 | 0.8891 | 0.8897 | 0.8787 |
+| 3 | 6 | Skip-gram doc vectors (100d) | linear_svm | 0.8774 | 0.8848 | 0.8834 | 0.8857 | 0.8715 |
+| 4 | 10 | TF-IDF word n-grams | linear_svm | 0.8729 | 0.8747 | 0.8741 | 0.8793 | 0.8679 |
+| 5 | 7 | Skip-gram doc vectors (100d) | random_forest | 0.8689 | 0.8771 | 0.8756 | 0.8847 | 0.8583 |
+| 6 | 4 | CBOW doc vectors (100d) | gradient_boosting | 0.8628 | 0.8687 | 0.8680 | 0.8746 | 0.8536 |
+| 7 | 9 | TF-IDF word n-grams | logistic_regression | 0.8627 | 0.8646 | 0.8642 | 0.8810 | 0.8497 |
+| 8 | 1 | CBOW doc vectors (100d) | logistic_regression | 0.8585 | 0.8650 | 0.8642 | 0.8654 | 0.8532 |
+| 9 | 2 | CBOW doc vectors (100d) | linear_svm | 0.8507 | 0.8582 | 0.8563 | 0.8596 | 0.8450 |
+| 10 | 3 | CBOW doc vectors (100d) | random_forest | 0.8337 | 0.8451 | 0.8427 | 0.8573 | 0.8199 |
+| 11 | 12 | TF-IDF word n-grams | gradient_boosting | 0.8137 | 0.8154 | 0.8150 | 0.8312 | 0.8012 |
+| 12 | 11 | TF-IDF word n-grams | random_forest | 0.7840 | 0.7857 | 0.7845 | 0.8163 | 0.7662 |
+
+5. WARNINGS AND LIMITATIONS PER EXPERIMENT
+------------------------------------------------------------------------
+  exp  11 (tfidf_word / random_forest):
+      - random_forest does not support sparse TF-IDF directly; trained on a 256-component TruncatedSVD view fitted on training features only.
+  exp  12 (tfidf_word / gradient_boosting):
+      - gradient_boosting does not support sparse TF-IDF directly; trained on a 256-component TruncatedSVD view fitted on training features only.
+
+6. SELECTED CONFIGURATION (by validation macro-F1)
+------------------------------------------------------------------------
+  Experiment index: 8
+  Feature:          Skip-gram doc vectors (100d) (docvec:skipgram)
+  Classifier:       gradient_boosting
+  Parameters:       learning_rate=0.1, max_iter=200, seed=42
+  Validation macro-F1:    0.8883
+  Validation accuracy:    0.8947
+  Validation weighted F1: 0.8942
+
+  Per-class validation metrics for the selected configuration:
+  category           precision    recall        f1   support
+  State                 0.9210    0.9470    0.9338      1624
+  International         0.8645    0.9183    0.8906      1494
+  Entertainment         0.9342    0.9136    0.9238      1134
+  Business              0.8845    0.8770    0.8807      1179
+  Nation                0.8004    0.7671    0.7834      1181
+  Technology            0.8731    0.9130    0.8926       874
+  Sports                0.9576    0.9511    0.9543      1044
+  Astro                 0.9600    0.9452    0.9526       839
+  Crime                 0.8203    0.7432    0.7798       479
+  Auto                  0.9360    0.8502    0.8910       327
+
+  Selection note: the winner is the best among the evaluated configurations on this dataset and protocol, not a universal claim.
+
+========================================================================
+END OF VALIDATION REPORT
+========================================================================

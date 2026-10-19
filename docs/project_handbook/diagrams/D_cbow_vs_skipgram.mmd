@@ -1,0 +1,22 @@
+%% Diagram D - CBOW vs Skip-gram word embeddings
+flowchart LR
+    subgraph CBOWG["CBOW (sg=0) - predict the target from context"]
+        direction LR
+        C_IN1["w(i-2)"] --> C_H["sum / average<br/>context vectors"]
+        C_IN2["w(i-1)"] --> C_H
+        C_IN3["w(i+1)"] --> C_H
+        C_IN4["w(i+2)"] --> C_H
+        C_H --> C_OUT["predict w(i)"]
+    end
+
+    subgraph SKIPG["Skip-gram (sg=1) - predict context from the target"]
+        direction LR
+        S_IN["w(i)"] --> S_OUT1["predict w(i-2)"]
+        S_IN --> S_OUT2["predict w(i-1)"]
+        S_IN --> S_OUT3["predict w(i+1)"]
+        S_IN --> S_OUT4["predict w(i+2)"]
+    end
+
+    NOTE["Both trained here with:<br/>vector_size=100, window=5,<br/>min_count=2, epochs=10, seed=42<br/>vocab = 210,459 tokens"]
+    CBOWG -.-> NOTE
+    SKIPG -.-> NOTE
